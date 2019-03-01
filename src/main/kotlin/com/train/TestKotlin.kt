@@ -4,23 +4,25 @@ import java.util.*
 
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
-    print("Please enter number of tickets: ")
-    var totaltickets = scanner.nextInt()
-    if (totaltickets > 0){
-        print("How many round-trip tickets: ")
-        var roundtrip = scanner.nextInt()
-        if (roundtrip >= 0 && roundtrip <= totaltickets){
-            var ticket = Ticket(totaltickets, roundtrip)
-            ticket.print()
-        }
-        else {
-            print("Input error.  Please check your number of  round-trip tickets.")
+
+    while (true) {
+        print("Please enter number of tickets: ")
+        var totaltickets = scanner.nextInt()
+        if (totaltickets > 0) {
+            print("How many round-trip tickets: ")
+            var roundtrip = scanner.nextInt()
+            if (roundtrip >= 0 && roundtrip <= totaltickets) {
+                var ticket = Ticket(totaltickets, roundtrip)
+                ticket.print()
+            } else {
+                println("Input error.  Please check your number of  round-trip tickets.\n")
+            }
+        } else if (totaltickets == -1) {
+            print("Thank you.")
             return
+        } else {
+            println("Input error.  Please check your number of tickets.\n")
         }
-    }
-    else{
-        print("Input error.  Please check your number of tickets.")
-        return
     }
 }
 
@@ -31,6 +33,6 @@ class Ticket(var totaltickets: Int, var roundtrip: Int){
     fun print(){
         println("Total tickets: $totaltickets")
         println("Round-trip:  $roundtrip")
-        println("Total: $total")
+        println("Total: $total\n5")
     }
 }

@@ -14,6 +14,6 @@ public class Ticket {
     public void print(){
         System.out.println("Total tickets: " + totaltickets + "\n" +
                 "Round-trip:" + roundtrip + "\n" +
-                "Total:" + total);
+                "Total:" + total + "\n");
     }
 }
