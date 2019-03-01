@@ -22,7 +22,7 @@ public class Tester {
                 }
             } else if (totaltickets == -1) {
                  System.out.println("Thank you.");
-                 return;
+                 break;
             } else{
                  System.out.println("Input error.  Please check your number of tickets.\n");
             }

@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
             }
         } else if (totaltickets == -1) {
             print("Thank you.")
-            return
+            break
         } else {
             println("Input error.  Please check your number of tickets.\n")
         }
@@ -33,6 +33,6 @@ class Ticket(var totaltickets: Int, var roundtrip: Int){
     fun print(){
         println("Total tickets: $totaltickets")
         println("Round-trip:  $roundtrip")
-        println("Total: $total\n5")
+        println("Total: $total\n")
     }
 }
