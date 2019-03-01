@@ -4,10 +4,12 @@ import java.util.*
 
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
+    val leave = -1
+    var totaltickets = 0
 
-    while (true) {
+    while (totaltickets != leave) {
         print("Please enter number of tickets: ")
-        var totaltickets = scanner.nextInt()
+        totaltickets = scanner.nextInt()
         if (totaltickets > 0) {
             print("How many round-trip tickets: ")
             var roundtrip = scanner.nextInt()
@@ -17,7 +19,7 @@ fun main(args: Array<String>) {
             } else {
                 println("Input error.  Please check your number of  round-trip tickets.\n")
             }
-        } else if (totaltickets == -1) {
+        } else if (totaltickets == leave) {
             print("Thank you.")
             break
         } else {

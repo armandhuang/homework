@@ -6,21 +6,24 @@ public class Tester {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        int leave = -1;
+        int totaltickets = 0;
+        int roundtrip = 0;
 
-        while (true) {
+        while (totaltickets != leave) {
             System.out.print("Please enter number of tickets:");
-            int totaltickets = scanner.nextInt();
+            totaltickets = scanner.nextInt();
 
             if (totaltickets > 0) {
                 System.out.print("How many round-trip tickets:");
-                int roundtrip = scanner.nextInt();
+                roundtrip = scanner.nextInt();
                 if (roundtrip >= 0 && roundtrip <= totaltickets) {
                     Ticket ticket = new Ticket(totaltickets, roundtrip);
                     ticket.print();
                 } else {
                     System.out.println("Input error.  Please check your number of  round-trip tickets.\n");
                 }
-            } else if (totaltickets == -1) {
+            } else if (totaltickets == leave) {
                  System.out.println("Thank you.");
                  break;
             } else{
